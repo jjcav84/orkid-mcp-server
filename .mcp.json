@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "orkid": {
+      "command": "npx",
+      "args": ["-y", "@orkid-labs/mcp-server"],
+      "env": {
+        "ORKID_API_KEY": "${ORKID_API_KEY}"
+      }
+    }
+  }
+}

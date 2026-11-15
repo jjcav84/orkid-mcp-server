@@ -1,0 +1,44 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "xyz.orkidlabs/orkid-swap",
+  "title": "Orkid Swap",
+  "description": "Gasless MEV-protected swaps, bridges & StateVector data tools — x402 pay-per-call",
+  "repository": {
+    "url": "https://github.com/jjcav84/orkid-mcp-server",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "websiteUrl": "https://orkidlabs.xyz",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@orkid-labs/mcp-server",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "description": "Orkid partner API key — free at https://orkidlabs.xyz/partner (optional; keyless calls use x402 pay-per-call)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": true,
+          "name": "ORKID_API_KEY"
+        }
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://orkidlabs.xyz/api/mcp",
+      "headers": [
+        {
+          "description": "Orkid partner API key — free tier, get one at https://orkidlabs.xyz/partner",
+          "isSecret": true,
+          "name": "X-ORKID-API-Key"
+        }
+      ]
+    }
+  ]
+}

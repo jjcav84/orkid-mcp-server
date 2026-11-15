@@ -1,0 +1,15 @@
+# Smithery deployment — stdio bridge to the hosted Orkid MCP endpoint.
+# Or use the remote HTTP transport instead: https://orkidlabs.xyz/api/mcp
+startCommand:
+  type: stdio
+  command: npx
+  args: ["-y", "@orkid-labs/mcp-server"]
+configSchema:
+  type: object
+  properties:
+    apiKey:
+      type: string
+      title: Orkid API Key
+      description: Free partner key — self-serve at https://orkidlabs.xyz/partner (optional; keyless uses x402)
+exampleConfig:
+  apiKey: ""
