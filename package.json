@@ -1,0 +1,30 @@
+{
+  "name": "@orkid-labs/mcp-server",
+  "version": "1.0.0",
+  "description": "Orkid Swap MCP server — gasless MEV-protected swaps, bridge quotes & StateVector market data for AI agents. stdio transport proxying the hosted Orkid MCP endpoint; x402 pay-per-call or free API key.",
+  "type": "module",
+  "bin": {
+    "orkid-mcp": "./dist/index.js"
+  },
+  "files": ["dist", "README.md"],
+  "keywords": ["mcp", "model-context-protocol", "orkid", "defi", "swap", "bridge", "x402", "statevector"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjcav84/orkid-mcp-server"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  }
+}
